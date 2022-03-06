@@ -41,9 +41,31 @@ const myTimeout = setTimeout(getMessage, 5000);
 
 }
 
-guessBtn.addEventListener('click', function(){
-    message.innerHTML = getMessage();
+async function fartAndBobs() {
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    location.reload();
+}
+
+userInput.addEventListener('keyup', function(){
+    if(event.keyCode === 13) {
+        // event.preventDefault();
+        if(getMessage().charAt(0).toLowerCase() == `c`) {
+            message.innerText = getMessage();
+            fartAndBobs();
+        } else {
+            message.innerText = getMessage();
+        }
+    }
 })
+guessBtn.addEventListener('click', function(){
+    if(getMessage().charAt(0).toLowerCase() == `c`) {
+        message.innerText = getMessage();
+        fartAndBobs();
+    } else {
+        message.innerText = getMessage();
+    }
+})
+
 
 /** 
 async function guessCheck(ranNo) {
