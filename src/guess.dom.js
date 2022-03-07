@@ -23,11 +23,7 @@ const myTimeout = setTimeout(getMessage, 5000);
          return `Please guess a number between 1 and 100`;
     }
 
-    if(userNumber > 100) {
-        return `Number ${userNumber} is out of range!`;
-    }
-
-    if(userNumber < 1) {
+    if((userNumber < 1)  || (userNumber > 100)) {
         return `Number ${userNumber} is out of range!`;
     }
 
@@ -41,8 +37,8 @@ const myTimeout = setTimeout(getMessage, 5000);
 
 }
 
-async function fartAndBobs() {
-    await new Promise(resolve => setTimeout(resolve, 3000));
+async function theTime() {
+    await new Promise(resolve => setTimeout(resolve, 5000));
     location.reload();
 }
 
@@ -51,16 +47,17 @@ userInput.addEventListener('keyup', function(){
         // event.preventDefault();
         if(getMessage().charAt(0).toLowerCase() == `c`) {
             message.innerText = getMessage();
-            fartAndBobs();
+            theTime();
         } else {
             message.innerText = getMessage();
         }
     }
 })
+
 guessBtn.addEventListener('click', function(){
     if(getMessage().charAt(0).toLowerCase() == `c`) {
         message.innerText = getMessage();
-        fartAndBobs();
+        theTime();
     } else {
         message.innerText = getMessage();
     }
