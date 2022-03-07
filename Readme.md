@@ -1,0 +1,1 @@
+[![Build Status](https://app.travis-ci.com/WeHaveJoy/Guessing_game.svg?branch=master)](https://app.travis-ci.com/WeHaveJoy/Guessing_game)
