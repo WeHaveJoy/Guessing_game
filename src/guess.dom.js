@@ -5,18 +5,13 @@ const message = document.querySelector(".message");
 let randomNumber = Math.ceil((Math.random() * 100));
 
 
-const myTimeout = setTimeout(getMessage, 5000);
 
  function getMessage() {
     const userNumber = userInput.value;
 
     if (userNumber == randomNumber) {
-        // setTimeout(()=> randomNumber = )
+
        return `Correct, the secret number is ${userNumber}`;
-       
-        // await new Promise(resolve => setTimeout(resolve, 1000));
-        //  location.reload();
-        // return false;
     }
 
    if (userInput.value == "") {
@@ -39,7 +34,7 @@ const myTimeout = setTimeout(getMessage, 5000);
 
 async function theTime() {
     await new Promise(resolve => setTimeout(resolve, 5000));
-    location.reload();
+     location.reload();
 }
 
 userInput.addEventListener('keyup', function(){
@@ -57,7 +52,7 @@ userInput.addEventListener('keyup', function(){
 guessBtn.addEventListener('click', function(){
     if(getMessage().charAt(0).toLowerCase() == `c`) {
         message.innerText = getMessage();
-        theTime();
+        // theTime();
     } else {
         message.innerText = getMessage();
     }
